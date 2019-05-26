@@ -9,6 +9,7 @@ $factory->define(Ciudad::class, function (Faker $faker) {
     return [
     	'cod_ciu' => $faker->numberBetween($min = 000, $max = 999),
     	'nom_ciu' => $faker->city,
-    	'cod_pais' => $faker->iban
+    	'cod_pais' => $faker->iban,
+    	'estado' => $faker->randomElement($array = array ('A','X')),
     ];
 });

@@ -16,5 +16,7 @@ class DatabaseSeeder extends Seeder
         $this->call(CiudadCollectionSeeder::class);
         $this->call(UserCollectionSeeder::class);
         //$this->call(ClienteCollectionSeeder::class);
+        $this->call(Categoria_Articulo_CollectionSeeder::class);
+        $this->call(ArticuloCollectionSeeder::class);
     }
 }

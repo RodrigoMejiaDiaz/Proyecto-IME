@@ -8,7 +8,7 @@ class Pais extends Moloquent
 {
 	protected $collection = 'paises';
 	protected $fillable = [
-		'nom_pais','cod_pais'
+		'nom_pais','cod_pais, estado'
 	];
 	public $timestamps = false;
 
