@@ -4,12 +4,12 @@ namespace App;
 
 use Jenssegers\Mongodb\Eloquent\Model as  Moloquent;
 
-class Pais extends Moloquent
+class Ciudad extends Moloquent
 {
-	protected $collection = 'paises';
+	protected $collection = 'ciudades';
 	protected $fillable = [
-		'nom_pais','cod_pais'
+		'cod_ciu','nom_ciu','cod_pais'
 	];
 	public $timestamps = false;
-
+    
 }

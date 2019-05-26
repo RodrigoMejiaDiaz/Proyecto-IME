@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class PaisCollectionSeeder extends Seeder
+class CiudadCollectionSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +11,6 @@ class PaisCollectionSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Pais::class, 15)->create();
+        factory(App\Ciudad::class, 15)->create();
     }
 }

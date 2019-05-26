@@ -7,6 +7,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Pais::class, function (Faker $faker) {
     return [
-        'nom_pais' => $faker->country
+        'nom_pais' => $faker->country,
+        'cod_pais' => $faker->iban
     ];
 });
