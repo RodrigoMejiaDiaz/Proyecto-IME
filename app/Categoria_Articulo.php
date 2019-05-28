@@ -13,6 +13,6 @@ class Categoria_Articulo extends Moloquent
     public $timestamps = false;
     public function articulo()
     {
-    	return $this->belongsTo('Articulo');
+    	return $this->belongsTo('App\Articulo');
     }
 }

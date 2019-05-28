@@ -14,6 +14,11 @@ class Ciudad extends Moloquent
     
     public function paises()
     {
-    	return $this->belongsTo('Pais');
+    	return $this->belongsTo('App\Pais');
+    }
+
+    public function users()
+    {
+    	return $this->hasMany('App\User');
     }
 }

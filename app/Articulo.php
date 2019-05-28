@@ -12,6 +12,6 @@ class Articulo extends Moloquent
     ];
     public function categoria()
     {
-    	return $this->hasMany('Categoria_Articulo');
+    	return $this->hasMany('App\Categoria_Articulo');
     }
 }
