@@ -43,4 +43,9 @@ class User extends Authenticatable
         return $this->belongsTo(App\Ciudad);
     }
 
+    public function compra()
+    {
+        return $this->belongsTo(App\Compra);
+    }
+
 }

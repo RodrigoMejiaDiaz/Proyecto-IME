@@ -2,11 +2,22 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use Jenssegers\Mongodb\Eloquent\Model as  Moloquent;
 
-class Compra extends Model
+class Compra extends Moloquent
 {
+	protected $collection = 'compras';
     protected $fillable = [
-    	'_id_user', '_id_ar', 'estado'
-    ]
+    	'id_user', 'id_ar', 'estado'
+    ];
+
+    public function user()
+    {
+    	return $this->hasOne(App\User);
+    }
+
+    public function articulo()
+    {
+    	return $this->hasOne(App\Articulo);
+    }
 }

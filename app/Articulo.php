@@ -14,4 +14,9 @@ class Articulo extends Moloquent
     {
     	return $this->hasMany(App\Categoria_Articulo);
     }
+
+    public function compra()
+    {
+    	return $this->belongsTo(App\Compra);
+    }
 }
