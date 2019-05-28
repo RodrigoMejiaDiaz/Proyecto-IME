@@ -11,6 +11,6 @@ class PaisCollectionSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Pais::class, 15)->create();
+        factory(App\Pais::class, 5)->create();
     }
 }

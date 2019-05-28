@@ -13,7 +13,7 @@ class Pais extends Moloquent
 	public $timestamps = false;
 
 	public function ciudades() {
-		return $this->hasMany('App\Ciudad');
+		return $this->hasMany(App\Ciudad);
 	}
 
 }

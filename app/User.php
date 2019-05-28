@@ -40,7 +40,7 @@ class User extends Authenticatable
 
     public function ciudad()
     {
-        return $this->belongsTo('App\Ciudad');
+        return $this->belongsTo(App\Ciudad);
     }
 
 }
