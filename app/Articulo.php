@@ -8,15 +8,20 @@ class Articulo extends Moloquent
 {
     protected $collection = 'articulos';
     protected $fillable = [
-    	'nom_art', 'cod_art','des_art', 'nom_cat', 'precio', 'stock', 'estado'
+    	'nom_art', 'cod_art','des_art', 'nom_cat', 'precio', 'stock', 'id_prov', 'estado'
     ];
     public function categoria()
     {
-    	return $this->hasMany(App\Categoria_Articulo);
+    	return $this->hasMany('App\Categoria_Articulo');
     }
 
     public function compra()
     {
-    	return $this->belongsTo(App\Compra);
+    	return $this->belongsTo('App\Compra');
+    }
+
+    public function proveedor()
+    {
+        return $this->belongsTo('App\Proveedor');
     }
 }

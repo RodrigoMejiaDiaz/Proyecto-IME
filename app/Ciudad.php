@@ -8,17 +8,17 @@ class Ciudad extends Moloquent
 {
 	protected $collection = 'ciudades';
 	protected $fillable = [
-		'cod_ciu','nom_ciu','cod_pais, estado'
+		'cod_ciu','nom_ciu','id_pais, estado'
 	];
 	public $timestamps = false;
     
-    public function paises()
+    public function pais()
     {
-    	return $this->belongsTo(App\Pais);
+    	return $this->belongsTo('App\Pais');
     }
 
     public function users()
     {
-    	return $this->hasMany(App\User);
+    	return $this->hasMany('App\User');
     }
 }

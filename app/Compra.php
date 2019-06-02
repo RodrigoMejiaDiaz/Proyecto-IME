@@ -8,16 +8,16 @@ class Compra extends Moloquent
 {
 	protected $collection = 'compras';
     protected $fillable = [
-    	'id_user', 'id_ar', 'estado'
+    	'id_user', 'id_art', 'estado'
     ];
 
     public function user()
     {
-    	return $this->hasOne(App\User);
+    	return $this->belongsTo('App\User');
     }
 
     public function articulo()
     {
-    	return $this->hasOne(App\Articulo);
+    	return $this->hasOne('App\Articulo');
     }
 }
