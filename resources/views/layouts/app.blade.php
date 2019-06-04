@@ -23,9 +23,12 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                <div class="navbar-left">
+                    <a class="navbar-logo" href="{{ url('/') }}">
+                    <img src="https://lh3.googleusercontent.com/05_Yu84LVg8uTC2eWXLcxCOwSP3TZM90Gksf_aPPer93NpWOMjU9tKOLCwpje2v6I0sk07cTCSNQ32xqBCD7WFo1GwV8znvf7BldF2pH78RAaZXhEYo0lG0FodpyelmXFsEyewK8E8HzQykcjzISaKYBHhpTd2GOkuXDWSLRQLOFoxfanQyZkdRxordvI7h7rCqJVXDKS2RROx0Q7f6bI2TMdBE64h0irmQO6PMBLgoSfoy5Gcr7Ciu8wL2mUrrNbbvfCnTiq5OyjWK1q5S-JU5qdSmd5jQ6Oo7-MqGLHT3K-t6og5Z_zdS8J42DRzu2lY4fmvpiewtmlH4YCkf-TBech4sqqGdONLR7fT9xbSep4GQot2mZZfNTbPoYzw7zR-T4od7xlLhSdokCpUukO4J4gZCS-cVsmS9GqfVdaCVazNDfq1nfQ1p-gTYFyy2TYHOrvDwEvL8sXvIK_6B73f9xKLu-mJnsvgNu6lWhsq4l106NrSry2mXKNrkcSsbSeHZPWl5MbNLnI5BFEXwKE6NRqzuC9YhmVNuIAxm2xDdbGaKWtqSNrvHbwGSEI2AbuN9kRl9JZQGIJNjFZSsMUEyr2b3zEy7Yxb6vu2wBBri0Nqetsmmq5fde_uCxCa59S2oZ2A26KMizO1E1yCmIkrw_okz9ig=w1246-h789-no" alt="Logo" class="rounded float-left" style="float:left;width:10%;height:12%;">
                 </a>
+                </div>
+                
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>

@@ -8,7 +8,7 @@ class Articulo extends Moloquent
 {
     protected $collection = 'articulos';
     protected $fillable = [
-    	'nom_art', 'cod_art','des_art', 'nom_cat', 'precio', 'stock', 'id_prov', 'estado'
+    	'nom_art', 'cod_art','des_art', 'nom_cat', 'precio', 'img', 'stock', 'id_prov', 'estado'
     ];
     public function categoria()
     {
