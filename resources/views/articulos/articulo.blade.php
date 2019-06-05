@@ -15,6 +15,8 @@
 		<br>
 		<h4>Stock: <small>{{ $articulo->stock }}</small> </h4>
 		<br>
+		<h5>{{ $articulo->nom_cat }}</h5>
+		<br>
 		<button class="btn btn-success btn-lg">Comprar</button>
 	</div>
 
@@ -24,7 +26,7 @@
 		
 		<h5>{{ $articulo->des_art }}</h5>
 		<br>
-		<h5>{{ $articulo->nom_cat }}</h5>
+		
 		
 	</div>
 
