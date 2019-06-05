@@ -10,7 +10,7 @@ class ArticuloController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth')->except('index');
+        $this->middleware('auth')->except('index','show');
     }
     /**
      * Display a listing of the resource.
@@ -21,6 +21,11 @@ class ArticuloController extends Controller
     {
         $articulos = Articulo::all();
         return view('index', compact('articulos'));
+    }
+
+    public function show($id)
+    {
+        return view('articulos.articulo',['articulo'=>Articulo::find($id)]);
     }
 
     /**
@@ -42,17 +47,6 @@ class ArticuloController extends Controller
     public function store(Request $request)
     {
         //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Articulo  $articulo
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Articulo $articulo)
-    {
-        
     }
 
     /**
