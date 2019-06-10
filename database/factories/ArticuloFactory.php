@@ -30,6 +30,7 @@ $factory->define(Articulo::class, function (Faker $faker) {
         'des_art' => $faker->sentence($nbWords = 20, $variableNbWords = true),
         'nom_cat' => $faker->randomElement($categorias_noms),
         'precio' => $faker->numberBetween($min = 20, $max = 2000),
+        'img' => $faker->image('public/images', 400, 300, null, false),
         'stock' => $faker->numberBetween($min = 0, $max = 100),
         'id_prov' => $faker->randomElement($proveedores_ids),
         'estado' => $faker->randomElement($array = array ('A','X'))
