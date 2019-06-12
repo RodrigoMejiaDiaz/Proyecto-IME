@@ -27,15 +27,8 @@
 		<h5>{{ $articulo->des_art }}</h5>
 		<br>
 		
-		
 	</div>
 
-
-
-
 </div>
-
-
-
 
 @endsection
