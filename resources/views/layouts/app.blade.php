@@ -78,19 +78,13 @@
                 </div>
                
             </div>
-            <div class="mt-3 ml-4 mr-4 w-75">
-                <div class="btn-group w-100" style="width: 200px;" role="group">
-                <button type="button" class="btn btn-secondary w-25 rounded border-dark font-weight-bold text-dark" style="background-color: #CDBAB6">Artículos básicos</button>
-                <button type="button" class="btn btn-secondary w-25 rounded border-dark font-weight-bold text-dark" style="background-color: #CDBAB6">Suturas</button>
-                <button type="button" class="btn btn-secondary w-25 rounded border-dark font-weight-bold text-dark" style="background-color: #CDBAB6">Limpieza general</button>
-                <button type="button" class="btn btn-secondary w-25 rounded border-dark font-weight-bold text-dark" style="background-color: #CDBAB6">Limpieza general</button>
-                </div>
-            </div>
+            
             
 
         </nav>
 
         <main class="py-4" >
+            
             @yield('content')
         </main>
     </div>
