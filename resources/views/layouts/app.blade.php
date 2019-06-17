@@ -32,10 +32,10 @@
                  <div class="collapse navbar-collapse offcanvas-collapse" id="navbarSupportedContent">
                     
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-                        <form class="form-inline">
-                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    <ul class="navbar-nav w-100">
+                        <form class="form-inline w-100">
+                            <input class="form-control  w-75" type="search" placeholder="Search" aria-label="Search">
+                                <button class="btn btn-secondary m-2" type="submit">Search</button>
                                     </form>
                     </ul>
 
@@ -76,8 +76,18 @@
                         
                     </ul>
                 </div>
-
+               
             </div>
+            <div class="mt-3 ml-4 mr-4 w-75">
+                <div class="btn-group w-100" style="width: 200px;" role="group">
+                <button type="button" class="btn btn-secondary w-25 rounded border-dark font-weight-bold text-dark" style="background-color: #CDBAB6">Artículos básicos</button>
+                <button type="button" class="btn btn-secondary w-25 rounded border-dark font-weight-bold text-dark" style="background-color: #CDBAB6">Suturas</button>
+                <button type="button" class="btn btn-secondary w-25 rounded border-dark font-weight-bold text-dark" style="background-color: #CDBAB6">Limpieza general</button>
+                <button type="button" class="btn btn-secondary w-25 rounded border-dark font-weight-bold text-dark" style="background-color: #CDBAB6">Limpieza general</button>
+                </div>
+            </div>
+            
+
         </nav>
 
         <main class="py-4" >
