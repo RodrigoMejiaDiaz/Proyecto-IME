@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container px-4">
+<div class="container">
 	<div class="mb-4 mr-4 w-75">
                 <div class="btn-group w-100" style="width: 200px;" role="group">
                 <button type="button" class="btn btn-secondary w-25 rounded border-dark font-weight-bold text-dark" style="background-color: #CDBAB6">Artículos básicos</button>
@@ -11,7 +11,7 @@
                 </div>
             </div>
 
-		<div class="row">
+		<div class="row w-100">
 			@foreach($articulos as $articulo)
 			<div class="col-4">
 				<div class="card-deck h-100">
