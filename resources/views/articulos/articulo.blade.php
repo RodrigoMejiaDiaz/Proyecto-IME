@@ -31,7 +31,11 @@
 				<div class="card-body">
 					<h4 class="text-center">S./ {{ $articulo->precio }}</h4>
 					<div class="text-center">
-					<button type="button" class="btn btn-success btn-lg w-75 p-3">Comprar</button>	
+					<form action="{{ action('CompraController@store')}}" method="POST">
+					@csrf
+					<input type="hidden" name="id_art" value="{{ $articulo->id }}">
+					<button type="submit" class="btn btn-lg btn-success">Comprar</button>
+					</form>
 					</div>
 					
 				</div>
@@ -51,7 +55,12 @@
 				<div class="card-body bg-info">
 					<a href="{{ action('ArticuloController@show', $articulo->id) }}"><h4 class="card-title text-dark">{{ $articulo->nom_art  }} <span class="badge badge-pill badge-secondary">S/. {{$articulo->precio}}</span></h4></a>
 					<p class="card-text">{{ $articulo->des_art }}</p>
-					<a href="{{ action('ArticuloController@show', $articulo->id) }}" class="btn btn-success">Comprar</a>
+					<form action="{{ action('CompraController@store')}}" method="POST">
+					@csrf
+					<input type="hidden" name="id_art" value="{{ $articulo->id }}">
+					<button type="submit" class="btn btn-lg btn-success">Comprar</button>
+					</form>
+					
 				</div>
 		</div>
 		@endforeach

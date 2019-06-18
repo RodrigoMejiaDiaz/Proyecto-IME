@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Articulo;
 use App\Categoria_Articulo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ArticuloController extends Controller
 {

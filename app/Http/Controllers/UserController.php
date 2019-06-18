@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use App\Compra;
-use App\Articulo;
 use App\Categoria_Articulo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Controller;
 
-class CompraController extends Controller
+class UserController extends Controller
 {
     public function __construct()
     {
         $this->middleware('auth');
     }
-
     /**
      * Display a listing of the resource.
      *
@@ -23,6 +23,15 @@ class CompraController extends Controller
     public function index()
     {
         //
+    }
+
+    public function compras()
+    {
+        $categorias_articulos = Categoria_Articulo::all();
+
+        $user_id = Auth::id();
+        $compras = Compra::where('id_user', '=', $user_id)->get();
+        return view('user.carro', compact('compras','categorias_articulos'));
     }
 
     /**
@@ -43,26 +52,16 @@ class CompraController extends Controller
      */
     public function store(Request $request)
     {
-        $articulos = Articulo::all();
-        $categorias_articulos = Categoria_Articulo::all();
-
-        $compra = new Compra();
-        $compra->id_user = Auth::id();
-        $compra->id_art = $request->get('id_art');
-
-        $user = Auth::user();
-        $user->compras()->save($compra);
-
-        return redirect()->route('carro', compact('articulos','categorias_articulos'));
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Compra  $compra
+     * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show(Compra $compra)
+    public function show(User $user)
     {
         //
     }
@@ -70,10 +69,10 @@ class CompraController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Compra  $compra
+     * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(Compra $compra)
+    public function edit(User $user)
     {
         //
     }
@@ -82,10 +81,10 @@ class CompraController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Compra  $compra
+     * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Compra $compra)
+    public function update(Request $request, User $user)
     {
         //
     }
@@ -93,10 +92,10 @@ class CompraController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Compra  $compra
+     * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Compra $compra)
+    public function destroy(User $user)
     {
         //
     }
