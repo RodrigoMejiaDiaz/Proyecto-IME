@@ -19,9 +19,9 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body style="background-color: #e3f2fd;">
+<body>
     <div id="app">
-        <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-primary">
+        <nav class="navbar sticky-top navbar-expand-lg navbar-light" style="background-color:#00b3ff;">
                  <a class="navbar-brand" href="{{ url('/') }}">
                    <img src="https://lh3.googleusercontent.com/lnmhwcxgoq4MaoWsJaB86u5j8JMk2zPEIyYblgo_ydwzlthy6UWppzyzXH7QCW1OlDTRTm7jSxt2ra97lv7S_RmwsksD9ZLkaNwWbSmQSr3Z6JkXcZzoMDXClEhOSaeZNDZ1nz9t5J83L7jMHHSjAOmkcRc2-JMAj6I2KAW6Eshq-k5InFYxsLQhgoCEZcIMSChRoe9c4m5ZdXlY0AXWpU17W_NgRDpmbjUDcq2dPxeB17uz_C9p3tnfg8s6BoLMuXEcoq6BIltKWGVjRfYlHSPyl3o9dfp84y18AmngjjV2EvCvDHV0ZGMPs9BnwZDOaH702aetu_C9SjghzdB7LsiKt4Rsagxg_YVmX_l7Bthl4RKmPFaEe6Sow0IIzPfJscp_aydepQ-codQsIFaDpkmyGmntkOKo4Ihhqqp34jwGJhC1yxCbA294hA7nVPD32HkoAhHc2pq9Kl0gBwKtcTSt78urSkXikVkFEak2zjJuxDIwb-ckm-a-y0h-x0t9XBOl2nAaPkBeR4omW9pY4HDw9olD1DKLk6vnMqshzr3Y7Sy9OWmmQ_dLq0fzZL8aW8sHkWNZSDmMeCQLV7LCI7fgLGLL63f5DPaAwjOLeUxJX0YG8V7qplOLnleerl-Zuwkwfop7HCa7Ve1-gr1ECFHHjaIY6g=w1246-h789-no" width="100" height="70" class="d-inline-block align-top" alt="Logo">
                  </a>
@@ -83,7 +83,8 @@
 
         </nav>
 
-        <main class="py-4" >
+        <main class="py-4 bg-white" >
+                
             
             @yield('content')
         </main>

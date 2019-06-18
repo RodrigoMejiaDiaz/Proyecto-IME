@@ -12,6 +12,7 @@
     </div>                     
 </div>
 
+
 <div class="container">
 		<div class="row w-100">
 			@foreach($articulos as $articulo)

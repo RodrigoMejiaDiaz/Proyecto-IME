@@ -8,11 +8,12 @@ class Categoria_Articulo extends Moloquent
 {
     protected $collection = "categorias_articulos";
     protected $fillable = [
-    	'nom_cat', 'des_cat', 'estado'
+    	'nom_cat', 'des_cat', 'estado',
     ];
     public $timestamps = false;
-    public function articulo()
+
+    public function articulos()
     {
-    	return $this->belongsTo('App\Articulo');
+    	return $this->hasMany('App\Articulo');
     }
 }

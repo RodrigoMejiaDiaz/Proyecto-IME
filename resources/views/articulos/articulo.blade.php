@@ -1,15 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
-	<div class="mb-4 mr-4 w-75 ml-4">
-                <div class="btn-group w-100" style="width: 200px;" role="group">
-                <button type="button" class="btn btn-secondary w-25 rounded border-dark font-weight-bold text-dark" style="background-color: #CDBAB6">Artículos básicos</button>
-                <button type="button" class="btn btn-secondary w-25 rounded border-dark font-weight-bold text-dark" style="background-color: #CDBAB6">Suturas</button>
-                <button type="button" class="btn btn-secondary w-25 rounded border-dark font-weight-bold text-dark" style="background-color: #CDBAB6">Limpieza general</button>
-                <button type="button" class="btn btn-secondary w-25 rounded border-dark font-weight-bold text-dark" style="background-color: #CDBAB6">Limpieza general</button>
-                </div>
-            </div>
-<div class="container bg-white">
+
+<div class="container mb-4 w-100">
+    <div class="btn-group w-100" role="group">
+    	 <button type="button" class="btn btn-secondary w-25 rounded border-dark font-weight-bold text-dark" style="background-color: #CDBAB6"><a href="{{ url('/') }}">Todos</a></button>
+    	@foreach($categorias_articulos as $categoria_articulo)
+        <button type="button" class="btn btn-secondary w-25 rounded border-dark font-weight-bold text-dark" style="background-color: #CDBAB6"><a href="{{ action('ArticuloController@categorias_articulos', $categoria_articulo->nom_cat) }}">{{$categoria_articulo->nom_cat}}</a></button>
+
+        @endforeach
+    </div>                     
+</div>
+	
+<div class="container">
+
+
 		
 	<div class="row">
 
