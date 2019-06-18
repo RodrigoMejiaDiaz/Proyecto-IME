@@ -12,7 +12,7 @@ class Articulo extends Moloquent
     ];
     public function categoria()
     {
-    	return $this->hasMany('App\Categoria_Articulo');
+    	return $this->belongsTo('App\Categoria_Articulo');
     }
 
     public function compra()

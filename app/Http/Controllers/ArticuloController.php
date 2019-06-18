@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Articulo;
+use App\Categoria_Articulo;
 use Illuminate\Http\Request;
 
 class ArticuloController extends Controller
@@ -10,7 +11,7 @@ class ArticuloController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth')->except('index','show');
+        $this->middleware('auth')->except('index','show','categorias_articulos');
     }
     /**
      * Display a listing of the resource.
@@ -20,12 +21,23 @@ class ArticuloController extends Controller
     public function index()
     {
         $articulos = Articulo::all();
-        return view('index', compact('articulos'));
+        $categorias_articulos = Categoria_Articulo::all();
+        return view('index', compact('articulos','categorias_articulos'));
     }
 
     public function show($id)
     {
-        return view('articulos.articulo',['articulo'=>Articulo::find($id)]);
+        $nom_cat = Articulo::find($id)->value('nom_cat');
+        $articulos = Articulo::limit(5)->where('nom_cat','=', $nom_cat)->get();
+        $categorias_articulos = Categoria_Articulo::all();
+        return view('articulos.articulo',['articulo'=>Articulo::find($id)],compact('articulos','categorias_articulos'));
+    }
+
+    public function categorias_articulos($nom_cat)
+    {
+        $categorias_articulos = Categoria_Articulo::all();
+        $articulos = Articulo::where('nom_cat', '=', $nom_cat)->get();
+        return view('articulos.categoria_articulo', compact('articulos','categorias_articulos'));
     }
 
     /**

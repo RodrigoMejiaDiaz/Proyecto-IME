@@ -2,40 +2,64 @@
 
 @section('content')
 
+<div class="container mb-4 w-100">
+    <div class="btn-group w-100" role="group">
+    	 <button type="button" class="btn btn-secondary w-25 rounded border-dark font-weight-bold text-dark" style="background-color: #CDBAB6"><a href="{{ url('/') }}">Todos</a></button>
+    	@foreach($categorias_articulos as $categoria_articulo)
+        <button type="button" class="btn btn-secondary w-25 rounded border-dark font-weight-bold text-dark" style="background-color: #CDBAB6"><a href="{{ action('ArticuloController@categorias_articulos', $categoria_articulo->nom_cat) }}">{{$categoria_articulo->nom_cat}}</a></button>
+
+        @endforeach
+    </div>                     
+</div>
+	
 <div class="container">
 
-	<div class="float-left ">
-		<div class="img-field">
-			<img src="{{ asset('images/' . $articulo->img )}}" class="img-thumbnail" alt="Imagen del articulo">
+
+		
+	<div class="row">
+
+		<div class="col-md-4 p-3">
+			 <img src="{{ asset('images/' . $articulo->img) }}" class="card-img-top" alt="...">
 		</div>
-	</div>
+		<div class="col-lg-4 p-3">
+			<h2>{{ $articulo->nom_art }}</h2>
+			<p>{{ $articulo->des_art }}</p>
+			<h4><strong>Stock: {{ $articulo->stock }}</strong></h4>
+		</div>
+		<div class="col p-3">
+			<div class="card">
+				<div class="card-body">
+					<h4 class="text-center">S./ {{ $articulo->precio }}</h4>
+					<div class="text-center">
+					<button type="button" class="btn btn-success btn-lg w-75 p-3">Comprar</button>	
+					</div>
+					
+				</div>
+			</div>
 
-	<div class="float-right">
-		<h4>S/.{{ $articulo->precio }}</h4>
-		<br>
-		<h4>Stock: <small>{{ $articulo->stock }}</small> </h4>
-		<br>
-		<h5>{{ $articulo->nom_cat }}</h5>
-		<br>
-		<button class="btn btn-success btn-lg">Comprar</button>
-	</div>
-
-	<div class="mx-auto" style="width: 200px;">
-		<h1 class="display-4">{{ $articulo->nom_art }}</h1>
-
-		
-		<h5>{{ $articulo->des_art }}</h5>
-		<br>
-		
+		</div>
 		
 	</div>
+</div>
 
-
-
+<div class="container w-75">
+	<h4>Productos similares</h4>
+	<div class="card-group">
+		@foreach ($articulos as $articulo)
+		<div class="card">
+			<img src="{{ asset('images/' . $articulo->img) }}" class="card-img-top" alt="...">
+				<div class="card-body bg-info">
+					<a href="{{ action('ArticuloController@show', $articulo->id) }}"><h4 class="card-title text-dark">{{ $articulo->nom_art  }} <span class="badge badge-pill badge-secondary">S/. {{$articulo->precio}}</span></h4></a>
+					<p class="card-text">{{ $articulo->des_art }}</p>
+					<a href="{{ action('ArticuloController@show', $articulo->id) }}" class="btn btn-success">Comprar</a>
+				</div>
+		</div>
+		@endforeach
+	</div>
 
 </div>
 
-
+	
 
 
 @endsection

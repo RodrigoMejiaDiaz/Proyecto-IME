@@ -19,68 +19,73 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body style="background-color: #e3f2fd;">
+<body>
     <div id="app">
-        <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-primary">
-            <div class="container">
-                <div class="navbar-left">
-                    <a class="navbar-logo" href="{{ url('/') }}">
-                    <img src="https://lh3.googleusercontent.com/05_Yu84LVg8uTC2eWXLcxCOwSP3TZM90Gksf_aPPer93NpWOMjU9tKOLCwpje2v6I0sk07cTCSNQ32xqBCD7WFo1GwV8znvf7BldF2pH78RAaZXhEYo0lG0FodpyelmXFsEyewK8E8HzQykcjzISaKYBHhpTd2GOkuXDWSLRQLOFoxfanQyZkdRxordvI7h7rCqJVXDKS2RROx0Q7f6bI2TMdBE64h0irmQO6PMBLgoSfoy5Gcr7Ciu8wL2mUrrNbbvfCnTiq5OyjWK1q5S-JU5qdSmd5jQ6Oo7-MqGLHT3K-t6og5Z_zdS8J42DRzu2lY4fmvpiewtmlH4YCkf-TBech4sqqGdONLR7fT9xbSep4GQot2mZZfNTbPoYzw7zR-T4od7xlLhSdokCpUukO4J4gZCS-cVsmS9GqfVdaCVazNDfq1nfQ1p-gTYFyy2TYHOrvDwEvL8sXvIK_6B73f9xKLu-mJnsvgNu6lWhsq4l106NrSry2mXKNrkcSsbSeHZPWl5MbNLnI5BFEXwKE6NRqzuC9YhmVNuIAxm2xDdbGaKWtqSNrvHbwGSEI2AbuN9kRl9JZQGIJNjFZSsMUEyr2b3zEy7Yxb6vu2wBBri0Nqetsmmq5fde_uCxCa59S2oZ2A26KMizO1E1yCmIkrw_okz9ig=w1246-h789-no" alt="Logo" class="rounded float-left" style="float:left;width:10%;height:12%;">
-                </a>
-                </div>
-                
-                
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+        <nav class="navbar sticky-top navbar-expand-lg navbar-light" style="background-color:#00b3ff;">
+                 <a class="navbar-brand" href="{{ url('/') }}">
+                   <img src="https://lh3.googleusercontent.com/lnmhwcxgoq4MaoWsJaB86u5j8JMk2zPEIyYblgo_ydwzlthy6UWppzyzXH7QCW1OlDTRTm7jSxt2ra97lv7S_RmwsksD9ZLkaNwWbSmQSr3Z6JkXcZzoMDXClEhOSaeZNDZ1nz9t5J83L7jMHHSjAOmkcRc2-JMAj6I2KAW6Eshq-k5InFYxsLQhgoCEZcIMSChRoe9c4m5ZdXlY0AXWpU17W_NgRDpmbjUDcq2dPxeB17uz_C9p3tnfg8s6BoLMuXEcoq6BIltKWGVjRfYlHSPyl3o9dfp84y18AmngjjV2EvCvDHV0ZGMPs9BnwZDOaH702aetu_C9SjghzdB7LsiKt4Rsagxg_YVmX_l7Bthl4RKmPFaEe6Sow0IIzPfJscp_aydepQ-codQsIFaDpkmyGmntkOKo4Ihhqqp34jwGJhC1yxCbA294hA7nVPD32HkoAhHc2pq9Kl0gBwKtcTSt78urSkXikVkFEak2zjJuxDIwb-ckm-a-y0h-x0t9XBOl2nAaPkBeR4omW9pY4HDw9olD1DKLk6vnMqshzr3Y7Sy9OWmmQ_dLq0fzZL8aW8sHkWNZSDmMeCQLV7LCI7fgLGLL63f5DPaAwjOLeUxJX0YG8V7qplOLnleerl-Zuwkwfop7HCa7Ve1-gr1ECFHHjaIY6g=w1246-h789-no" width="100" height="70" class="d-inline-block align-top" alt="Logo">
+                 </a>
+                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                   <span class="navbar-toggler-icon"></span>
+                 </button>
 
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
+                 <div class="collapse navbar-collapse offcanvas-collapse" id="navbarSupportedContent">
+                    
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-
+                    <ul class="navbar-nav w-100">
+                        <form class="form-inline w-100">
+                            <input class="form-control  w-75" type="search" placeholder="Search" aria-label="Search">
+                                <button class="btn btn-secondary m-2" type="submit">Search</button>
+                                    </form>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
+                               
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Ingresar') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Registrar') }}</a>
                                 </li>
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::user()->name }} <span class="caret"></span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                   <a class="dropdown-item" href="{{ route('logout') }}"
+                                      onclick="event.preventDefault();
+                                                    document.getElementById('logout-form').submit();">
+                                       {{ __('Logout') }}
+                                   </a>
+                                   <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                       @csrf
+                                   </form>
+                                   <a class="dropdown-item" href="">Editar Usuario</a>
 
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
+                               </div>
+                           </li>
+                       @endguest
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
+
+                        
                     </ul>
                 </div>
-
+               
             </div>
+            
+            
+
         </nav>
 
-        <main class="py-4" >
+        <main class="py-4 bg-white" >
+                
+            
             @yield('content')
         </main>
     </div>
