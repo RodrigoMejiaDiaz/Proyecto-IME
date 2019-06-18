@@ -40,35 +40,26 @@
 		</div>
 		
 	</div>
+</div>
 
+<div class="container w-75">
 	<h4>Productos similares</h4>
-
-	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-	  <ol class="carousel-indicators">
-	    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-	    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-	    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-	  </ol>
-	  <div class="carousel-inner">
-	    <div class="carousel-item active">
-	      <img src="{{ asset('images/' . $articulo->img) }}" class="d-block w-100" alt="...">
-	    </div>
-	    <div class="carousel-item">
-	      <img src="{{ asset('images/' . $articulo->img) }}" class="d-block w-100" alt="...">
-	    </div>
-	    <div class="carousel-item">
-	      <img src="{{ asset('images/' . $articulo->img) }}" class="d-block w-100" alt="...">
-	    </div>
-	  </div>
-	  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-	    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-	    <span class="sr-only">Previous</span>
-	  </a>
-	  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-	    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-	    <span class="sr-only">Next</span>
-	  </a>
+	<div class="card-group">
+		@foreach ($articulos as $articulo)
+		<div class="card">
+			<img src="{{ asset('images/' . $articulo->img) }}" class="card-img-top" alt="...">
+				<div class="card-body bg-info">
+					<a href="{{ action('ArticuloController@show', $articulo->id) }}"><h4 class="card-title text-dark">{{ $articulo->nom_art  }} <span class="badge badge-pill badge-secondary">S/. {{$articulo->precio}}</span></h4></a>
+					<p class="card-text">{{ $articulo->des_art }}</p>
+					<a href="{{ action('ArticuloController@show', $articulo->id) }}" class="btn btn-success">Comprar</a>
+				</div>
+		</div>
+		@endforeach
 	</div>
 
 </div>
+
+	
+
+
 @endsection
