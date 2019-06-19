@@ -29,7 +29,7 @@ class ArticuloController extends Controller
     public function show($id)
     {
         $nom_cat = Articulo::find($id)->value('nom_cat');
-        $articulos = Articulo::limit(5)->where('nom_cat','=', $nom_cat)->get();
+        $articulos = Articulo::limit(4)->where('nom_cat','=', $nom_cat)->get();
         $categorias_articulos = Categoria_Articulo::all();
         return view('articulos.articulo',['articulo'=>Articulo::find($id)],compact('articulos','categorias_articulos'));
     }

@@ -2,21 +2,23 @@
 
 @section('content')
 
-<div class="container mb-4 w-100">
-    <div class="btn-group w-100 text-reset text-decoration-none" role="group">
-    	<a href="{{ url('/') }}" class="btn btn-secondary w-25 rounded border-dark text-dark"style="background-color: #CDBAB6;">
-    	Todos</a>
-    	@foreach($categorias_articulos as $categoria_articulo)
-        <a href="{{ action('ArticuloController@categorias_articulos', $categoria_articulo->nom_cat) }}" class="btn btn-secondary w-25 rounded border-dark text-dark"style="background-color: #CDBAB6">
-        	{{$categoria_articulo->nom_cat}}</a>
-        @endforeach
-    </div>                     
+<div class="container w-100">
+
+	<nav aria-label="breadcrumb">
+	  <ol class="breadcrumb">
+	    <li class="breadcrumb-item active" aria-current="page">Todos</li>
+	    @foreach($categorias_articulos as $categoria_articulo)
+	    <li class="breadcrumb-item"><a href="{{ action('ArticuloController@categorias_articulos', $categoria_articulo->nom_cat) }}">{{$categoria_articulo->nom_cat}}</a></li>
+	     @endforeach
+	  </ol>
+	</nav>
 </div>
 
 <div class="container bg-white">
+
 		<div class="row">
 			@foreach($articulos as $articulo)
-			<div class="col-md-3">
+			<div class="col-lg-3 col-md-4 col-sm-6 col-6">
 				<div class="card-deck h-100 rounded">
 					<div class="card">
 					  <img src="{{ asset('images/' . $articulo->img) }}" class="card-img-top" alt="...">
