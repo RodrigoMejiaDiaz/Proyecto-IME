@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Articulo;
 use App\Categoria_Articulo;
+use App\Proveedor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -28,6 +29,7 @@ class ArticuloController extends Controller
 
     public function show($id)
     {
+        
         $nom_cat = Articulo::find($id)->value('nom_cat');
         $articulos = Articulo::limit(4)->where('nom_cat','=', $nom_cat)->get();
         $categorias_articulos = Categoria_Articulo::all();
