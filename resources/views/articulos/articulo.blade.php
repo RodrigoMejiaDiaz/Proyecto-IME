@@ -27,6 +27,9 @@
 						<form action="{{ action('CompraController@store')}}" method="POST">
 						@csrf
 						<input type="hidden" name="id_art" value="{{ $articulo->id }}">
+						<input type="hidden" name="nom_art" value="{{ $articulo->nom_art }}">
+						<input type="hidden" name="img" value="{{ $articulo->img }}">
+						<input type="hidden" name="precio" value="{{ $articulo->precio }}">
 						<button type="submit" class="btn btn-lg" style="background-color: #ffcc00;">Comprar</button>
 						</form>
 						</div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use App\Compra;
+use App\Articulo;
 use App\Categoria_Articulo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -30,8 +31,9 @@ class UserController extends Controller
         $categorias_articulos = Categoria_Articulo::all();
 
         $user_id = Auth::id();
+        $user = Auth::user();
         $compras = Compra::where('id_user', '=', $user_id)->get();
-        return view('user.carro', compact('compras','categorias_articulos'));
+        return view('user.carro', compact('compras', 'user','categorias_articulos'));
     }
 
     /**

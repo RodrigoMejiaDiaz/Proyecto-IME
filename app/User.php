@@ -31,6 +31,11 @@ class User extends Authenticatable
         return $this->belongsTo('App\Ciudad');
     }
 
+    public function carro()
+    {
+        return $this->embedsMany('App\Carro');
+    }
+
     public function compras()
     {
         return $this->embedsMany('App\Compra');
