@@ -42,12 +42,11 @@
                       <div><td  class="w-25"> <img src="{{ asset('images/' . $compra->img) }}"  alt="{{$compra->nom_art}}" class="img-fluid"></td></div>
                       <div><td>{{ $compra->nom_art  }}</td></div>
                       <div><td>S/.{{ $compra->precio }}</td></div>
-                      <div><td><form action="{{ route('delete.compra', $compra->id) }}" method='POST'>
-                      @csrf
-                      <input type="hidden" name="_method" value="DELETE">
-                      <input type="submit" class="btn btn-danger" value="Delete">
-                      @csrf
-                    </form></td></div>
+                      <div><td><form action="{{ action('CarroController@delete')}}" method="POST">
+            @csrf
+            <input type="hidden" name="id" value="{{ $compra->id }}"></td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+              Borrar
+            </button></div>
                     </tr>
 
                      @endforeach
