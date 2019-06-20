@@ -1,8 +1,27 @@
 @extends('layouts.app')
 
 @section('content')
+ 	<nav class="nav nav-tabs">
+  <li class="nav-item">
+      <a class="flex-sm-fill text-sm-center nav-link active" href="{{ route('home') }}">Todos</a>
+  </li> 
+  <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Categorías</a>
+      
+      <div class="dropdown-menu">
+          @foreach($categorias_articulos as $categoria_articulo)
+          <a class="dropdown-item" href="{{ action('ArticuloController@categorias_articulos', $categoria_articulo->nom_cat) }}">{{$categoria_articulo->nom_cat}}</a>
+           @endforeach
+      </div>
 
+     
+      
+  </li>
+ 
+ 
+</nav>
 <div class="container w-100">
+
 
 
 	
@@ -20,7 +39,7 @@
 		</div>
 		<div class="col-lg-3 col-md-12 pl-3 bg-white">
 			<div class="text-center">
-				<div class="card border-secondary bg-white">
+				<div class="card border-secondary bg-white my-2">
 					<div class="card-body bg-white">
 						<h4 class="text-center text-justify">S./ {{ $articulo->precio }}</h4>
 						<div class="text-center text-justify">

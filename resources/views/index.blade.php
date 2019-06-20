@@ -1,7 +1,28 @@
 @extends('layouts.app')
 
 @section('content')
+
  <div class="container-fluid bg-white m-auto">
+ 	<nav class="nav nav-tabs">
+  <li class="nav-item">
+      <a class="flex-sm-fill text-sm-center nav-link active" href="{{ route('home') }}">Todos</a>
+  </li> 
+  <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Categorías</a>
+      
+      <div class="dropdown-menu">
+          @foreach($categorias_articulos as $categoria_articulo)
+          <a class="dropdown-item" href="{{ action('ArticuloController@categorias_articulos', $categoria_articulo->nom_cat) }}">{{$categoria_articulo->nom_cat}}</a>
+           @endforeach
+      </div>
+
+     
+      
+  </li>
+ 
+ 
+</nav>
+ <div class="container-fluid bg-white m-auto py-3">
  	<h4>Todos los artículos</h4>
  			<div class="row no-gutters p-2">
  				
