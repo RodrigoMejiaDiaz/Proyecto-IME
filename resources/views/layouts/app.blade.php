@@ -77,7 +77,7 @@
                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                        @csrf
                                    </form>
-                                   <a class="dropdown-item  text-white" href="{{ route('user.edit', ['id'=>Auth::user()->id]) }}">Editar Usuario</a>
+                                   <a class="dropdown-item  text-white" href="">Editar Usuario</a>
 
                                </div>
                            </li>
@@ -98,30 +98,48 @@
         </nav>
 
       </div>
+      <nav class="nav nav-tabs p-4">
+        <li class="nav-item">
+            <a class="flex-sm-fill text-sm-center nav-link active" href="{{ route('home') }}">Todos</a>
+        </li> 
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Categorías</a>
+            
+            <div class="dropdown-menu">
+                @foreach($categorias_articulos as $categoria_articulo)
+                <a class="dropdown-item" href="{{ action('ArticuloController@categorias_articulos', $categoria_articulo->nom_cat) }}">{{$categoria_articulo->nom_cat}}</a>
+                 @endforeach
+            </div>
+
+           
+            
+        </li>
+       
+       
+      </nav>
 
 
-
-        <main class="py-4 bg-white text-dark" >
+        <main class="py-4 bg-light text-dark" >
                 
             
             @yield('content')
         </main>
         <footer class="container-fluid bg-info">
-          <div class="row">
-              <div class="col py-3">
+          <div class="row w-100">
+              <div class="col-fluid py-3 pr-5">
                     <img src="{{ asset('logo/' . 'Logo.png') }}" width="100" height="70" class="d-inline-block align-top" alt="Logo">
               </div>
-              <div class="col m-2">
+              <div class="col-fluid m-2 pr-5">
                 <h4>IME</h4>
                 <a href="" class="text-reset text-decoration-none">Sobre nosotros</a><br>
                 <a href="" class="text-reset text-decoration-none">Ubícanos</a><br>
                 <a href="" class="text-reset text-decoration-none">Contacto</a><br>
               </div>
-              <div class="col m-2">
+              <div class="col-fluid m-2 pr-5">
                 <h4>Horario</h4>
                 <p>Lunes a viernes 9:00 a 19:30 h Ininterrumpido</p>
               </div>
-              <div class="col m-2">
+              <div class="col-fluid m-2 pr-5">
                   <h4>Información</h4>
                   <a href="" class="text-reset text-decoration-none">Condiciones</a><br>
                   <a href="" class="text-reset text-decoration-none">Comerciales</a><br>
