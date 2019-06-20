@@ -126,7 +126,7 @@
         </main>
         <footer class="container-fluid bg-info">
           <div class="row w-100">
-              <div class="col-fluid py-3 pr-5">
+              <div class="col-fluid py-3 px-5">
                     <img src="{{ asset('logo/' . 'Logo.png') }}" width="100" height="70" class="d-inline-block align-top" alt="Logo">
               </div>
               <div class="col-fluid m-2 pr-5">
