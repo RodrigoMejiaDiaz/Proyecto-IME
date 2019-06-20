@@ -38,8 +38,37 @@
  								<div class="card-body col-lg-auto bg-white" >
  								  <h5 class="card-title text-dark">{{ $articulo->nom_art  }}</h5>
  								  <p>S/.{{ $articulo->precio }}</p>
+ 								</a>
  								  <div class="text-center">
- 								  	 <a href="{{ action('ArticuloController@show', $articulo->id) }}" class="btn btn-lg"style="background-color: #f7c68a;">Comprar</a>
+ 								  	 <form action="{{ action('CompraController@store')}}" method="POST">
+ 								  	 @csrf
+ 								  	 <input type="hidden" name="id_art" value="{{ $articulo->id }}">
+ 								  	 <input type="hidden" name="nom_art" value="{{ $articulo->nom_art }}">
+ 								  	 <input type="hidden" name="img" value="{{ $articulo->img }}">
+ 								  	 <input type="hidden" name="precio" value="{{ $articulo->precio }}">
+ 								  	 <!-- Button trigger modal -->
+ 								  	 <button type="button" class="btn" style="background-color: #ffcc00;" data-toggle="modal" data-target="#exampleModal">
+ 								  	   Comprar
+ 								  	 </button>
+
+ 								  	 <!-- Modal -->
+ 								  	 <div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+ 								  	   <div class="modal-dialog modal-dialog-centered" role="document">
+ 								  	     <div class="modal-content">
+ 								  	       <div class="modal-header">
+ 								  	         <h5 class="modal-title" id="exampleModalLabel">¿Seguir Comprando?</h5>
+ 								  	         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+ 								  	           <span aria-hidden="true">&times;</span>
+ 								  	         </button>
+ 								  	       </div>
+ 								  	       <div class="modal-footer">
+ 								  	         <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">Si</button>
+ 								  	         <button type="submit" class="btn btn-primary">Ir al carro de compras</button>
+ 								  	       </div>
+ 								  	     </div>
+ 								  	   </div>
+ 								  	 </div>
+ 								  	 </form>
  								  </div>
  								</div>
  							</div>
