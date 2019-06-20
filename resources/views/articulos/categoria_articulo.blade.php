@@ -2,34 +2,27 @@
 
 @section('content')
 
-<div class="container mb-4 w-100">
-    <div class="btn-group w-100" role="group">
-    	 <button type="button" class="btn btn-secondary w-25 rounded border-dark font-weight-bold text-dark" style="background-color: #CDBAB6"><a href="{{ url('/') }}">Todos</a></button>
-    	@foreach($categorias_articulos as $categoria_articulo)
-        <button type="button" class="btn btn-secondary w-25 rounded border-dark font-weight-bold text-dark" style="background-color: #CDBAB6"><a href="{{ action('ArticuloController@categorias_articulos', $categoria_articulo->nom_cat) }}">{{$categoria_articulo->nom_cat}}</a></button>
-
-        @endforeach
-    </div>                     
+<div class="container-fluid bg-white m-auto">
+  <p>Filtrado por:<b> {{ $query }} </b></p>
+		@foreach($articulos as $articulo)
+	<a href="{{ action('ArticuloController@show', $articulo->id) }}" class="text-reset text-decoration-none">
+	<div class="card mb-3 w-100 ">
+  <div class="row no-gutters p-1">
+    <div class="col-4 col-sm-4 col-md-3 col-lg-2">
+      <img src="{{ asset('images/' . $articulo->img) }}" class="card-img img-fluid py-4 pl-2" alt="{{$articulo->nom_art}}">
+    </div>
+    <div class="col-8 col-sm-8 w-100 h-auto col-md-9 col-lg-8">
+      <div class="card-body w-100 h-auto">
+        <h6 class="card-title">{{ $articulo->nom_art  }}</h6>
+        <p>S/.{{ $articulo->precio }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+</a>
+ @endforeach
 </div>
 
 
-<div class="container">
-		<div class="row w-100">
-			@foreach($articulos as $articulo)
-			<div class="col-md-4">
-				<div class="card-deck h-100">
-					<div class="card">
-					  <img src="{{ asset('images/' . $articulo->img) }}" class="card-img-top" alt="...">
-					  <div class="card-body bg-info">
-					    <a href="{{ action('ArticuloController@show', $articulo->id) }}"><h4 class="card-title text-dark">{{ $articulo->nom_art  }} <span class="badge badge-pill badge-secondary">S/. {{$articulo->precio}}</span></h4></a>
-					    <p class="card-text">{{ $articulo->des_art }}</p>
-					    <a href="{{ action('ArticuloController@show', $articulo->id) }}" class="btn btn-success">Comprar</a>
-					  </div>
-					</div>
-				</div>
-				
-			</div>
-		  
-		  @endforeach
-</div>
+		
 @endsection

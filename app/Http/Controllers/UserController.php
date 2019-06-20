@@ -2,18 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
+use App\Compra;
 use App\Articulo;
 use App\Categoria_Articulo;
-use App\Proveedor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Controller;
 
-class ArticuloController extends Controller
+class UserController extends Controller
 {
-
     public function __construct()
     {
-        $this->middleware('auth')->except('index','show','categorias_articulos');
+        $this->middleware('auth');
     }
     /**
      * Display a listing of the resource.
@@ -22,25 +23,17 @@ class ArticuloController extends Controller
      */
     public function index()
     {
-        $articulos = Articulo::all();
-        $categorias_articulos = Categoria_Articulo::all();
-        return view('index', compact('articulos','categorias_articulos'));
+        //
     }
 
-    public function show($id)
+    public function compras()
     {
-        
-        $nom_cat = Articulo::find($id)->value('nom_cat');
-        $articulos = Articulo::limit(4)->where('nom_cat','=', $nom_cat)->get();
         $categorias_articulos = Categoria_Articulo::all();
-        return view('articulos.articulo',['articulo'=>Articulo::find($id)],compact('articulos','categorias_articulos'));
-    }
 
-    public function categorias_articulos($nom_cat)
-    {
-        $categorias_articulos = Categoria_Articulo::all();
-        $articulos = Articulo::where('nom_cat', '=', $nom_cat)->get();
-        return view('articulos.categoria_articulo', compact('articulos','categorias_articulos'))->withQuery($nom_cat);
+        $user_id = Auth::id();
+        $user = Auth::user();
+        $compras = Compra::where('id_user', '=', $user_id)->get();
+        return view('user.carro', compact('compras', 'user','categorias_articulos'));
     }
 
     /**
@@ -65,12 +58,23 @@ class ArticuloController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Display the specified resource.
      *
-     * @param  \App\Articulo  $articulo
+     * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(Articulo $articulo)
+    public function show(User $user)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\User  $user
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(User $user)
     {
         //
     }
@@ -79,10 +83,10 @@ class ArticuloController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Articulo  $articulo
+     * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Articulo $articulo)
+    public function update(Request $request, User $user)
     {
         //
     }
@@ -90,10 +94,10 @@ class ArticuloController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Articulo  $articulo
+     * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Articulo $articulo)
+    public function destroy(User $user)
     {
         //
     }
