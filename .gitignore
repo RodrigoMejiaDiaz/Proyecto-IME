@@ -1,0 +1,5 @@
+.env
+*.jpg
+*.jpg
+app.php
+database.php
