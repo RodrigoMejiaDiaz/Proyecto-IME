@@ -45,7 +45,8 @@
                       <div><td><form action="{{ route('delete.compra', ['id'=>$compra->id_art]) }}" method='POST'>
                       @csrf
                       <input type="hidden" name="_method" value="DELETE">
-                      <input type="submit" name="btn btn-danger" value="Delete">
+                      <input type="submit" class="btn btn-danger" value="Delete">
+                      @csrf
                     </form></td></div>
                     </tr>
 
