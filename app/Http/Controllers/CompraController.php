@@ -42,6 +42,13 @@ class CompraController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+        public function delete($id)
+    {
+        $compra = Compra::findOrFail($id);
+        $compra->delete();
+
+        return redirect()->route('carro');
+    }
     public function store(Request $request)
     {
         $categorias_articulos = Categoria_Articulo::all();
@@ -60,48 +67,24 @@ class CompraController extends Controller
         return redirect()->route('carro');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Compra  $compra
-     * @return \Illuminate\Http\Response
-     */
+
     public function show(Compra $compra)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Compra  $compra
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit(Compra $compra)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Compra  $compra
-     * @return \Illuminate\Http\Response
-     */
+ 
     public function update(Request $request, Compra $compra)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Compra  $compra
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Compra $compra)
-    {
-        //
-    }
+
+
 }

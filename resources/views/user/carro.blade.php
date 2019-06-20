@@ -42,6 +42,11 @@
                       <div><td>{{ $compra->nom_art  }}</td></div>
                       <div><td>S/.{{ $compra->precio }}</td></div>
                     </tr>
+                    <form action="{{ route('delete.compra', ['id'=>$compra->id]) }}" method='POST'>
+                      @csrf
+                      <input type="hidden" name="_method" value="DELETE">
+                      <input type="submit" name="btn btn-danger" value="Delete">
+                    </form>
                      @endforeach
                 </div>
                 
