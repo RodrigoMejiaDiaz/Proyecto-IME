@@ -7,6 +7,7 @@ use App\Compra;
 use App\Articulo;
 use App\Categoria_Articulo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 
