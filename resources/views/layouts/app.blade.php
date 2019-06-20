@@ -106,6 +106,29 @@
             
             @yield('content')
         </main>
+        <footer class="container-fluid bg-info">
+          <div class="row">
+              <div class="col py-3">
+                    <img src="{{ asset('logo/' . 'Logo.png') }}" width="100" height="70" class="d-inline-block align-top" alt="Logo">
+              </div>
+              <div class="col m-2">
+                <h4>IME</h4>
+                <a href="" class="text-reset text-decoration-none">Sobre nosotros</a><br>
+                <a href="" class="text-reset text-decoration-none">Ubícanos</a><br>
+                <a href="" class="text-reset text-decoration-none">Contacto</a><br>
+              </div>
+              <div class="col m-2">
+                <h4>Horario</h4>
+                <p>Lunes a viernes 9:00 a 19:30 h Ininterrumpido</p>
+              </div>
+              <div class="col m-2">
+                  <h4>Información</h4>
+                  <a href="" class="text-reset text-decoration-none">Condiciones</a><br>
+                  <a href="" class="text-reset text-decoration-none">Comerciales</a><br>
+                  <a href="" class="text-reset text-decoration-none">Pilítica de privacidad</a><br>
+              </div>
+          </div>
+        </footer>
     </div>
 </body>
 </html>
