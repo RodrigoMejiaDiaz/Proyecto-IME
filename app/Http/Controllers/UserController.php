@@ -36,69 +36,51 @@ class UserController extends Controller
         return view('user.carro', compact('compras', 'user','categorias_articulos'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function edit(User $user)
+    {
+        return view('auth.edit');
+    }
+
+    public function update(Request $request,$id)
+    {
+        $request->user()->fill([
+            'password' => Hash::make($request->password)
+        ])->save();
+        $user = Auth::user($id);
+        $user->name = $request->get('username');
+        $user->email = $request->get('email');
+        $user->dni = $request->get('dni');
+        $user->ruc = $request->get('ruc');
+        $user->dir = $request->get('dir');
+        $user->cel = $request->get('cel');
+        $user->ciudad = $request->get('ciudad');
+        $user->save();
+        return redirect('home');
+
+    }
+
+    public function destroy($id)
+    {
+        $user = Auth::user($id);
+        $user->delete();
+        return redirect('home');
+    }
+
+
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\User  $user
-     * @return \Illuminate\Http\Response
-     */
     public function show(User $user)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\User  $user
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(User $user)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\User  $user
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, User $user)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\User  $user
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(User $user)
-    {
-        //
-    }
 }

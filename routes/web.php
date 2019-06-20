@@ -26,3 +26,9 @@ Route::any('/search', function() {
 Auth::routes();
 
 Route::get('/home', 'ArticuloController@index')->name('home');
+
+Route::get('/user/{id}/edituser', 'UserController@edit')->name('user.edit');
+
+Route::post('/user/{id}', 'UserController@update')->name('user.update');
+
+Route::delete('/user/{id}', 'UserController@destroy')->name('user.destroy');
