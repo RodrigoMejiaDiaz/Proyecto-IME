@@ -43,9 +43,10 @@
                     
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav w-100 pl-auto">
-                        <form class="form-inline w-100">
-                            <input class="form-control  w-75" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-light m-2" type="submit">Search</button>
+                        <form class="form-inline w-100 " action="/search" method="POST" role="search">
+                            @csrf
+                            <input class="form-control  w-75" type="text" placeholder="Buscar artículo" name="q" aria-label="Search">
+                            <button class="btn btn-light m-2" type="submit">Buscar</button>
                         </form>
                     </ul>
 
