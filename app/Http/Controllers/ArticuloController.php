@@ -40,7 +40,7 @@ class ArticuloController extends Controller
     {
         $categorias_articulos = Categoria_Articulo::all();
         $articulos = Articulo::where('nom_cat', '=', $nom_cat)->get();
-        return view('articulos.categoria_articulo', compact('articulos','categorias_articulos'));
+        return view('articulos.categoria_articulo', compact('articulos','categorias_articulos'))->withQuery($nom_cat);
     }
 
     /**

@@ -3,6 +3,7 @@
 @section('content')
 
 <div class="container-fluid bg-white m-auto">
+  <p>Filtrado por:<b> {{ $query }} </b></p>
 		@foreach($articulos as $articulo)
 	<a href="{{ action('ArticuloController@show', $articulo->id) }}" class="text-reset text-decoration-none">
 	<div class="card mb-3 w-100 ">
