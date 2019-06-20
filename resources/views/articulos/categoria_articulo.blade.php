@@ -8,7 +8,7 @@
 	<div class="card mb-3 w-100 ">
   <div class="row no-gutters p-1">
     <div class="col-4 col-sm-4 col-md-3 col-lg-2">
-      <img src="{{ asset('images/' . $articulo->img) }}" class="card-img w-100 h-100" alt="{{$articulo->nom_art}}">
+      <img src="{{ asset('images/' . $articulo->img) }}" class="card-img img-fluid py-4 pl-2" alt="{{$articulo->nom_art}}">
     </div>
     <div class="col-8 col-sm-8 w-100 h-auto col-md-9 col-lg-8">
       <div class="card-body w-100 h-auto">

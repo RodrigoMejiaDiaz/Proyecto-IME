@@ -33,7 +33,7 @@
       <div class="sticky-top">
         <nav class="navbar navbar-expand-lg navbar-light bg-info">
                  <a class="navbar-brand" href="{{ url('/') }}">
-                   <img src="https://lh3.googleusercontent.com/BlqPTpQ8cP78Jb01GG4BIQuELSqhcKrwM9DOKB1hJNljQw1Qw6R8UIxhrY08EWJSDgpSbJbpg_7dH32Yr4uD1yktizN48wwbVzg0a1MYjzsSDTdzx8rjFd7_eBKTpZg_-VtAqopbrb7wNvOrj6j-yHZ7RNeyhW0z62D9BZbCv90QXFfDQ3E37CBT4NHGJPpyr9n9fHrT3exBi4C3XnKG6kUtDAewkJ9SE68Zv-vCv3YAeCJkYefMfz1_CypZ0cx6Hg0ezEkA4wkzULw3KacCV4iGZkcBIXASTev4wjHcqTTHwf9zxHB-uN9g5v2oog37vlOBIqXC3Hzg5J2prMLVaj-QLNyuKUolTJMhdp9wXplpEw-xgJflGLx0MdtBhQmquMV_3Yt8XPZqKvKfdlnaNCerzq2e_wN0PoggQtekoIUj1XFx7OC0ySciUx4agNREKgne84hoUNzB3yWGIPyodG6NqXyIjhfhEf7qP2BTlCsFga1drG6b8z9L7cSXSrLeRHEOk6fo_onigUg_z9bzaVYZtf1xjmevDDvnvIpZGzZ-c-4kU4hnDY1MbMW_3Il7MfBZBGDCSGg8eIMZaZ_Y8kvLMCTxL-Gx5-uAu_-uJePfE2c7SjUNwFKYzWyOmktXFaf9z0zY87UzpGrodfWRNIy6zroltvI=w386-h385-no" width="100" height="70" class="d-inline-block align-top" alt="Logo">
+                   <img src="{{ asset('logo/' . 'Logo.png') }}" width="100" height="70" class="d-inline-block align-top" alt="Logo">
                  </a>
                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                    <span class="navbar-toggler-icon"></span>
@@ -97,7 +97,25 @@
         </nav>
 
       </div>
+      <nav class="nav nav-tabs p-4">
+        <li class="nav-item">
+            <a class="flex-sm-fill text-sm-center nav-link active" href="{{ route('home') }}">Todos</a>
+        </li> 
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Categorías</a>
+            
+            <div class="dropdown-menu">
+                @foreach($categorias_articulos as $categoria_articulo)
+                <a class="dropdown-item" href="{{ action('ArticuloController@categorias_articulos', $categoria_articulo->nom_cat) }}">{{$categoria_articulo->nom_cat}}</a>
+                 @endforeach
+            </div>
 
+           
+            
+        </li>
+       
+       
+      </nav>
 
 
         <main class="py-4 bg-white text-dark" >
