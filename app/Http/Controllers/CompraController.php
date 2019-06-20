@@ -42,13 +42,7 @@ class CompraController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-        public function delete($id)
-    {
-        $compra = Compra::findOrFail($id);
-        $compra->delete();
 
-        return redirect()->route('carro');
-    }
     public function store(Request $request)
     {
         $categorias_articulos = Categoria_Articulo::all();

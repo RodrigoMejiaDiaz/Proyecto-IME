@@ -33,4 +33,4 @@ Route::post('/user/{id}', 'UserController@update')->name('user.update');
 
 Route::delete('/user/{id}', 'UserController@destroy')->name('user.destroy');
 
-Route::delete('/carro', 'CompraController@delete')->name('delete.compra');
+Route::delete('/carro', 'CarroController@delete')->name('delete.compra');

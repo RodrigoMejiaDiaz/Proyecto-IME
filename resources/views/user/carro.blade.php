@@ -32,6 +32,7 @@
                   <th>Imágen</th>
                   <th>Artículo</th>
                   <th>Precio</th>
+                  <th>Borrar</th>
                 </tr>
               </thead>
               <tbody>
@@ -41,11 +42,11 @@
                       <div><td  class="w-25"> <img src="{{ asset('images/' . $compra->img) }}"  alt="{{$compra->nom_art}}" class="img-fluid"></td></div>
                       <div><td>{{ $compra->nom_art  }}</td></div>
                       <div><td>S/.{{ $compra->precio }}</td></div>
-                      <form action="{{ route('delete.compra', ['id'=>$compra->id_art]) }}" method='POST'>
+                      <div><td><form action="{{ route('delete.compra', ['id'=>$compra->id_art]) }}" method='POST'>
                       @csrf
                       <input type="hidden" name="_method" value="DELETE">
                       <input type="submit" name="btn btn-danger" value="Delete">
-                    </form>
+                    </form></td></div>
                     </tr>
 
                      @endforeach
