@@ -33,7 +33,8 @@ class CarroController extends Controller
 
         return redirect()->route('carro', compact('compra','categorias_articulos'));
     }
-        public function delete($id)
+    
+    public function delete($id)
     {
         $compra = Compra::findOrFail($id);
         $compra->delete();
